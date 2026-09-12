@@ -1,0 +1,71 @@
+/* Shared entrance animation utility */
+.anim-rise {
+  opacity: 0;
+  animation: riseIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Unified Landing Layout - one page, one scroll */
+.split-landing-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  background-color: var(--navy-deep);
+}
+
+/* Left hero column: grows with content, no internal scrollbar */
+.left-hero-section {
+  flex: 0 0 52%;
+  width: 52%;
+  max-width: 52%;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 85% 15%, #10294c 0%, #081d38 50%, #051329 100%);
+}
+
+/* Right login column: same height as its content */
+.right-login-section {
+  flex: 0 0 48%;
+  width: 48%;
+  max-width: 48%;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-right);
+}
+
+/* Tablet & Mobile Responsive (Intelligent Stacking) */
+@media (max-width: 1024px) {
+  .split-landing-layout {
+    flex-direction: column;
+  }
+
+  .left-hero-section,
+  .right-login-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .right-login-section {
+    min-height: 100svh;
+    gap: 28px;
+  }
+}

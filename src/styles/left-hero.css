@@ -1,0 +1,559 @@
+/* Left Hero Section Styles — grows with content, scrolls with the page.
+   overflow: clip contains the decorative orbs without creating
+   an internal scroll container. */
+.left-hero-section {
+  position: relative;
+  width: 100%;
+  overflow: clip;
+  background: radial-gradient(circle at 85% 15%, #10294c 0%, #081d38 50%, #051329 100%);
+}
+
+/* Ambient animated background orbs */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-a {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(37, 208, 124, 0.18) 0%, transparent 70%);
+  animation: orbDriftA 18s ease-in-out infinite alternate;
+}
+
+.orb-b {
+  width: 520px;
+  height: 520px;
+  bottom: -160px;
+  right: -140px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.22) 0%, transparent 70%);
+  animation: orbDriftB 22s ease-in-out infinite alternate;
+}
+
+@keyframes orbDriftA {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(60px, 40px) scale(1.08); }
+}
+
+@keyframes orbDriftB {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-50px, -60px) scale(1.12); }
+}
+
+.left-hero-content {
+  --hero-pad-left: clamp(20px, 3vw, 44px);
+  --hero-pad-right: clamp(20px, 2.8vw, 40px);
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px var(--hero-pad-right) 0 var(--hero-pad-left);
+}
+
+.left-hero-top-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. Government Top Header */
+.gov-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.gov-brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gov-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.gov-dept-name {
+  color: var(--text-white);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.gov-ministry-name {
+  color: #cbd5e1;
+  font-size: 11.5px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.gov-country-name {
+  color: #cbd5e1;
+  font-size: 11.5px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.gov-tagline-bar {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-ice);
+  text-transform: uppercase;
+}
+
+.gov-tagline-bar .divider {
+  opacity: 0.45;
+  font-weight: 300;
+}
+
+/* Portal status pill */
+.portal-status-pill {
+  margin-top: 8px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(38, 208, 124, 0.1);
+  border: 1px solid rgba(38, 208, 124, 0.35);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 8px rgba(38, 208, 124, 0.8);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(38, 208, 124, 0.8); }
+  50% { opacity: 0.55; box-shadow: 0 0 3px rgba(38, 208, 124, 0.4); }
+}
+
+.status-text {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+/* 2. Hero Title & Text */
+.left-hero-main {
+  margin-top: 14px;
+}
+
+.hero-title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-main-heading {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.heading-line-1 {
+  color: var(--text-white);
+}
+
+.heading-line-2 {
+  color: var(--accent-green);
+}
+
+.hero-sub-tagline {
+  margin-top: 10px;
+  font-size: clamp(12.5px, 1vw, 14.5px);
+  font-weight: 500;
+  color: var(--text-white);
+  letter-spacing: 0.01em;
+}
+
+.hero-description {
+  margin-top: 10px;
+  font-size: clamp(12px, 0.9vw, 13.5px);
+  line-height: 1.55;
+  color: #cbd5e1;
+  max-width: 480px;
+}
+
+/* 3. Four Feature Cards Row */
+.feature-cards-row {
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.feature-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  transition: transform var(--transition-normal);
+}
+
+.feature-card-item:hover {
+  transform: translateY(-3px);
+}
+
+.feature-circle-icon {
+  width: clamp(42px, 3.4vw, 52px);
+  height: clamp(42px, 3.4vw, 52px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+}
+
+.feature-card-item:hover .feature-circle-icon {
+  filter: brightness(1.12);
+  transform: scale(1.04);
+}
+
+.circle-blue {
+  background: var(--feature-scan);
+}
+
+.circle-green {
+  background: var(--feature-verify);
+}
+
+.circle-orange {
+  background: var(--feature-detect);
+}
+
+.circle-purple {
+  background: var(--feature-report);
+}
+
+.feature-card-label {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.25;
+}
+
+/* Responsive Packaged Commodity Showcase Box with AI scan-line.
+   Scales proportionally with container width at every zoom level —
+   no fixed height caps, so it never crops or detaches from the flow. */
+.package-showcase-box {
+  margin-left: calc(-1 * var(--hero-pad-left));
+  margin-right: calc(-1 * var(--hero-pad-right));
+  width: calc(100% + var(--hero-pad-left) + var(--hero-pad-right));
+  margin-top: 14px;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+  line-height: 0; /* remove inline-image baseline gap */
+  background: #0a1a30; /* blends any sub-pixel seam while the photo loads */
+}
+
+.package-showcase-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 830 / 318; /* natural ratio — reserves layout space pre-load */
+  object-fit: cover; /* safety only: applies if the asset ratio ever changes */
+}
+
+/* Animated AI scan-line overlay */
+.scanline-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scanline-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(38, 208, 124, 0.55) 18%, #4ade80 50%, rgba(38, 208, 124, 0.55) 82%, transparent 100%);
+  box-shadow: 0 0 18px 4px rgba(38, 208, 124, 0.45);
+  animation: scanSweep 3.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes scanSweep {
+  0% { top: -6px; opacity: 0; }
+  8% { opacity: 1; }
+  46% { top: 78%; opacity: 1; }
+  62% { top: 92%; opacity: 0.9; }
+  70% { top: 92%; opacity: 0; }
+  100% { top: -6px; opacity: 0; }
+}
+
+.scan-chip {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(5, 19, 41, 0.72);
+  border: 1px solid rgba(38, 208, 124, 0.45);
+  color: #86efac;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  backdrop-filter: blur(6px);
+}
+
+.scan-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: statusPulse 1.6s ease-in-out infinite;
+}
+
+/* 4b. Impact Statistics Row */
+.stats-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 14px;
+  padding: 9px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.stat-item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stat-value {
+  font-size: 17.5px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-white);
+}
+
+.stat-label {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8fa3bd;
+}
+
+/* 5. Bottom Trust Strip */
+.trust-strip-container {
+  margin-left: calc(-1 * var(--hero-pad-left));
+  margin-right: calc(-1 * var(--hero-pad-right));
+  width: calc(100% + var(--hero-pad-left) + var(--hero-pad-right));
+  background-color: rgba(4, 15, 31, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px var(--hero-pad-right) 14px var(--hero-pad-left);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trust-icon-box {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-title {
+  color: var(--text-white);
+  font-size: 12.5px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.trust-sub {
+  color: #94a3b8;
+  font-size: 10.5px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Responsive adjustments */
+
+/* Compact density for short laptop screens (13" MacBook Air class) at
+   100% zoom — trims ~80px so the trust strip sits fully inside the
+   viewport. vh-based caps keep proportions identical at any zoom. */
+@media (min-width: 1025px) and (max-height: 860px) {
+  .left-hero-content {
+    padding-top: 12px;
+  }
+  .gov-tagline-bar {
+    margin-top: 8px;
+  }
+  .portal-status-pill {
+    margin-top: 6px;
+    padding: 3px 10px;
+  }
+  .left-hero-main {
+    margin-top: 10px;
+  }
+  .hero-main-heading {
+    font-size: clamp(24px, 2.1vw, 31px);
+  }
+  .hero-sub-tagline {
+    margin-top: 8px;
+  }
+  .hero-description {
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+  .feature-cards-row {
+    margin-top: 12px;
+  }
+  .package-showcase-box {
+    margin-top: 10px;
+    /* Cap the WIDTH (not the height) so the aspect ratio is preserved —
+       no cropping, still proportional at every zoom level */
+    width: min(calc(100% + var(--hero-pad-left) + var(--hero-pad-right)), calc(34vh * 2.61));
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px 12px 0 0;
+  }
+  .stats-row {
+    margin-top: 10px;
+    padding: 7px 0;
+  }
+  .trust-strip-container {
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Override the fluid gutters — full-bleed showcase & trust strip
+     stay perfectly aligned automatically */
+  .left-hero-content {
+    --hero-pad-left: 20px;
+    --hero-pad-right: 20px;
+    padding-top: 22px;
+  }
+
+  .gov-brand-container {
+    gap: 12px;
+  }
+
+  .gov-dept-name {
+    font-size: 14.5px;
+  }
+
+  .gov-ministry-name,
+  .gov-country-name {
+    font-size: 11.5px;
+  }
+
+  .gov-tagline-bar {
+    margin-top: 14px;
+    font-size: 9.5px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .feature-cards-row {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .feature-circle-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .feature-card-label {
+    font-size: 10.5px;
+  }
+
+  .stats-row {
+    margin-top: 16px;
+    padding: 12px 0;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .package-showcase-box {
+    margin-top: 16px;
+  }
+
+  .trust-strip-container {
+    padding-top: 16px;
+    padding-bottom: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}

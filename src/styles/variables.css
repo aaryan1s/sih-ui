@@ -1,0 +1,85 @@
+:root {
+  /* Brand Palettes - Legal Metrology & Govt of India */
+  --navy-deep: #051329;
+  --navy-dark: #081d38;
+  --navy-mid: #0d284c;
+  --navy-light: #163663;
+  
+  --gov-blue: #08376e;
+  --gov-blue-gradient: linear-gradient(180deg, #09396f 0%, #06264d 100%);
+  --gov-blue-hover: #0a4484;
+  --gov-blue-active: #051e3c;
+  --gov-blue-light: #e0edff;
+  --gov-blue-border: #bfdbfe;
+  --gov-blue-text: #1d4ed8;
+
+  --accent-green: #26d07c;
+  --accent-green-dark: #15803d;
+  
+  /* 4 Feature Circle Badges */
+  --feature-scan: #0284c7;
+  --feature-verify: #10b981;
+  --feature-detect: #f97316;
+  --feature-report: #8b5cf6;
+
+  /* Right Panel Background */
+  --bg-right: #f0f4f9;
+  --card-bg: #ffffff;
+  --card-border: #eef2f6;
+  --card-shadow: 0 16px 45px -4px rgba(15, 23, 42, 0.08), 0 4px 16px -2px rgba(15, 23, 42, 0.03);
+
+  /* App (authenticated) surfaces — derived from landing language */
+  --app-page-bg: #f4f7fb;
+  --app-topbar-bg: #ffffff;
+  --app-topbar-border: #e3e9f2;
+  --sidebar-width: 232px;
+  --accent-saffron: #f59e0b;
+  --accent-saffron-deep: #b45309;
+  --accent-saffron-soft: rgba(245, 158, 11, 0.12);
+
+  /* Status colors (semantic) */
+  --status-ok: #16a34a;
+  --status-ok-soft: #ecfdf5;
+  --status-ok-border: #a7f3d0;
+  --status-warn: #d97706;
+  --status-warn-soft: #fffbeb;
+  --status-warn-border: #fde68a;
+  --status-bad: #dc2626;
+  --status-bad-soft: #fef2f2;
+  --status-bad-border: #fecaca;
+  --status-info: #2563eb;
+  --status-info-soft: #eff6ff;
+  --status-info-border: #bfdbfe;
+  --status-unknown: #64748b;
+  --status-unknown-soft: #f1f5f9;
+  --status-unknown-border: #e2e8f0;
+  
+  /* Text Colors */
+  --text-white: #ffffff;
+  --text-offwhite: #e2e8f0;
+  --text-ice: #bae6fd;
+  --text-heading: #0a2540;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  
+  /* Input & Controls */
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-border-focus: #2563eb;
+  --input-ring: 0 0 0 3px rgba(37, 99, 235, 0.14);
+  --input-placeholder: #94a3b8;
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sizing & Transitions */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}

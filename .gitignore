@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.env.local
+.env
+dist
+.DS_Store
+*.local
+stats.json
+dist
+dist-ssr
+*.local
+
+# OCR / analysis artifacts + temporary test scripts
+eng.traineddata
+temp-*.mjs
+temp-*.js
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
